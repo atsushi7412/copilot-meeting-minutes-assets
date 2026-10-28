@@ -1,0 +1,13 @@
+Outlook会議設定の架空サンプル（改善演習・before/after共通）
+出典ID：EVT-IMP-1125
+会議名：2026年度耐候評価 条件確認
+開催回：2026-11-25
+予定開始：2026-11-25T10:00:00+09:00
+予定終了：2026-11-25T10:30:00+09:00
+タイムゾーン：Asia/Tokyo
+主催者：山田花 <hana.yamada@example.com>
+招待者：山田花、佐藤
+会議URL：https://example.com/meet/weather-eval
+開催回ID：IMP-WEATHER-20261125
+目的：2026年度耐候評価の対象試作品の評価条件を確認する。
+備考：この会議設定・書き起こしはbeforeとafterで同一です。差し替えられるのは参照SSOTだけです。

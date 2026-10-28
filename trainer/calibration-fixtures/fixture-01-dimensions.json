@@ -1,0 +1,354 @@
+{
+  "schema": "mmca-runrecords/1",
+  "mode": "aggregation-local-synthetic",
+  "_doc": {
+    "purpose": "集計試験(合成ラベル・ローカル)。dimension別・run別の合否関数を再現検査する。実Copilot runではなく合成ラベル。fingerprintは実ファイルの正準値に束縛(SYNTHETIC_BOUND_TO_FILES_NO_DECLARATION)され、自己申告は未提供。",
+    "note": "本試料は一部の予定runのみ含むため、overall は planned-run-missing により INCOMPLETE になる(これも集計規則の再現対象)。focus は perRun の verdict。R3でrunIdをrepeatIndex付き(-1)に改め、runMode/runPurpose/repeatIndexを付与。C08はR3でcontent4/gate3に分解済み。",
+    "expected": {
+      "R-C01-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 17,
+            "total": 18,
+            "verdict": "FAIL"
+          },
+          "entity": {
+            "pass": 7,
+            "total": 7,
+            "verdict": "PASS"
+          },
+          "gate": {
+            "pass": 4,
+            "total": 4,
+            "verdict": "PASS"
+          }
+        },
+        "assessmentVerdict": "FAIL"
+      },
+      "R-C02-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 5,
+            "total": 5,
+            "verdict": "PASS"
+          },
+          "entity": {
+            "pass": 0,
+            "total": 0,
+            "verdict": "N/A"
+          },
+          "gate": {
+            "pass": 1,
+            "total": 1,
+            "verdict": "PASS"
+          }
+        },
+        "assessmentVerdict": "PASS"
+      },
+      "R-C06-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 3,
+            "total": 3,
+            "verdict": "PASS"
+          },
+          "entity": {
+            "pass": 4,
+            "total": 4,
+            "verdict": "PASS"
+          },
+          "gate": {
+            "pass": 1,
+            "total": 1,
+            "verdict": "PASS"
+          }
+        },
+        "assessmentVerdict": "PASS"
+      },
+      "R-C08-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 4,
+            "total": 4,
+            "verdict": "PASS"
+          },
+          "entity": {
+            "pass": 1,
+            "total": 1,
+            "verdict": "PASS"
+          },
+          "gate": {
+            "pass": 3,
+            "total": 4,
+            "verdict": "FAIL"
+          }
+        },
+        "assessmentVerdict": "FAIL"
+      },
+      "overall": "INCOMPLETE: planned 40 slots are not all executed in this calibration fixture."
+    },
+    "atomicNormalization": "入力/metadataの原子化に追従。新設された正常事実のラベルはPASS、元のFAIL/不正ラベルは維持。CONTAMは診断gateのみ。数値の正本は同梱scoring-ledgerのconfirmedDenominators。"
+  },
+  "runs": [
+    {
+      "runId": "R-C01-STD-1",
+      "case": "C01",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C01-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-04",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-05",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-06",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-07",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-08",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-09",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-10",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-11",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-12",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-13",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-14",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-15",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-17",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-C-18",
+          "result": "FAIL"
+        },
+        {
+          "itemId": "C01-C-19",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-E-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-E-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-E-04",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-E-05",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-E-06",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-E-07",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-G-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-G-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-G-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C01-G-MAJOR",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C02-STD-1",
+      "case": "C02",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C02-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-G-MAJOR",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-04",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-05",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C06-STD-1",
+      "case": "C06",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C06-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C06-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C06-E-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C06-E-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C06-E-04",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C06-G-MAJOR",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C06-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C06-C-03",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C08-STD-1",
+      "case": "C08",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C08-C-00",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-02",
+          "result": "FAIL"
+        },
+        {
+          "itemId": "C08-G-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-MAJOR",
+          "result": "PASS"
+        }
+      ]
+    }
+  ]
+}

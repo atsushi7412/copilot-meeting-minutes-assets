@@ -1,0 +1,229 @@
+{
+  "schema": "mmca-runrecords/1",
+  "mode": "aggregation-local-synthetic",
+  "_doc": {
+    "purpose": "run無効化(NOT PASS)の閉集合を再現検査する。未知run/重複項目/fingerprint不一致/variant混在/項目マッピング不能/未実施、および予定run欠落。R3でrunIdをrepeatIndex付きへ改め、runMode/runPurpose/repeatIndexを付与。",
+    "expected": {
+      "R-UNKNOWN": "plannedRunsに無い -> INVALID unknown-run",
+      "R-C02-STD-1": "同一itemId(C02-C-01)を重複 -> INVALID duplicate-item",
+      "R-C08-STD-1": "inputFingerprint='deadbeef...'(実ファイル正準値と不一致) -> INVALID input-fingerprint-mismatch (自己申告でなくファイル由来正準値と照合)",
+      "R-C01-SKILL-1": "variantをstandardと誤記 -> INVALID variant-mixed (plannedは skill)",
+      "R-C03-STD-1": "存在しないitemId(C03-C-99)を含む -> INVALID item-unmappable",
+      "R-C05-STD-1": "適用項目の一部(C05-C-04等)を欠落 -> INCOMPLETE not-executed",
+      "overall": "INVALID (anyInvalid が最優先)。missingPlannedRuns にも多数残る。"
+    },
+    "atomicNormalization": "入力/metadataの原子化に追従。新設された正常事実のラベルはPASS、元のFAIL/不正ラベルは維持。CONTAMは診断gateのみ。数値の正本は同梱scoring-ledgerのconfirmedDenominators。"
+  },
+  "runs": [
+    {
+      "runId": "R-UNKNOWN",
+      "case": "C01",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C01-C-01",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C02-STD-1",
+      "case": "C02",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C02-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-G-MAJOR",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-04",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C02-C-05",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C08-STD-1",
+      "case": "C08",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C08-C-00",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-MAJOR",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C01-SKILL-1",
+      "case": "C01",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C01-C-01",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C03-STD-1",
+      "case": "C03",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C03-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-C-03-TASK",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-C-03-OWNER",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-C-03-DUE",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-C-03-EVIDENCE",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-C-99",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C03-G-MAJOR",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C05-STD-1",
+      "case": "C05",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C05-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C05-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C05-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C05-C-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C05-C-04",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C05-G-MAJOR",
+          "result": "PASS"
+        }
+      ]
+    }
+  ]
+}

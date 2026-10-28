@@ -1,0 +1,286 @@
+{
+  "schema": "mmca-runrecords/1",
+  "mode": "aggregation-local-synthetic",
+  "_doc": {
+    "purpose": "I1(診断/業務分離)・I3(C08期限創作gate・新URLケース)の固定期待ラベル。CONTAM診断run・BIZ-CONFLICT業務run・C08期限創作gate・URL-IDMISS/URL-TOKFRAGの合否を再現検査する。",
+    "expected": {
+      "R-CONTAM-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 0,
+            "total": 0,
+            "verdict": "N/A"
+          },
+          "entity": {
+            "pass": 0,
+            "total": 0,
+            "verdict": "N/A"
+          },
+          "gate": {
+            "pass": 1,
+            "total": 1,
+            "verdict": "PASS"
+          }
+        },
+        "assessmentVerdict": "PASS",
+        "diagnosticVerdict": "PASS",
+        "generationStatus": "INCOMPLETE",
+        "generationEligible": false,
+        "cleanGenerationSuccess": false
+      },
+      "R-BIZ-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 3,
+            "total": 3,
+            "verdict": "PASS"
+          },
+          "entity": {
+            "pass": 1,
+            "total": 1,
+            "verdict": "PASS"
+          },
+          "gate": {
+            "pass": 2,
+            "total": 2,
+            "verdict": "PASS"
+          }
+        },
+        "assessmentVerdict": "PASS"
+      },
+      "R-C08-STD-2": {
+        "dimension": {
+          "content": {
+            "pass": 4,
+            "total": 4,
+            "verdict": "PASS"
+          },
+          "entity": {
+            "pass": 1,
+            "total": 1,
+            "verdict": "PASS"
+          },
+          "gate": {
+            "pass": 2,
+            "total": 4,
+            "verdict": "FAIL"
+          }
+        },
+        "assessmentVerdict": "FAIL"
+      },
+      "R-URLIDMISS-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 2,
+            "total": 2,
+            "verdict": "PASS"
+          },
+          "entity": {
+            "pass": 0,
+            "total": 0,
+            "verdict": "N/A"
+          },
+          "gate": {
+            "pass": 4,
+            "total": 4,
+            "verdict": "PASS"
+          }
+        },
+        "assessmentVerdict": "PASS"
+      },
+      "R-URLTOKFRAG-STD-1": {
+        "dimension": {
+          "content": {
+            "pass": 2,
+            "total": 2,
+            "verdict": "PASS"
+          },
+          "entity": {
+            "pass": 0,
+            "total": 0,
+            "verdict": "N/A"
+          },
+          "gate": {
+            "pass": 0,
+            "total": 2,
+            "verdict": "FAIL"
+          }
+        },
+        "assessmentVerdict": "FAIL"
+      },
+      "overall": "INCOMPLETE: planned 40 slots are not all executed in this calibration fixture."
+    },
+    "atomicNormalization": "入力/metadataの原子化に追従。新設された正常事実のラベルはPASS、元のFAIL/不正ラベルは維持。CONTAMは診断gateのみ。数値の正本は同梱scoring-ledgerのconfirmedDenominators。"
+  },
+  "runs": [
+    {
+      "runId": "R-CONTAM-STD-1",
+      "case": "CONTAM",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "diagnostic",
+      "inputVersion": "IMP-1.1+STALE-0.9",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "CONTAM-G-01",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-BIZ-STD-1",
+      "case": "BIZ-CONFLICT",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "business",
+      "runPurpose": "generation",
+      "inputVersion": "BIZ-A-1.0+BIZ-B-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "BIZ-CONFLICT-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "BIZ-CONFLICT-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "BIZ-CONFLICT-G-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "BIZ-CONFLICT-G-MAJOR",
+          "result": "PASS"
+        },
+        {
+          "itemId": "BIZ-CONFLICT-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "BIZ-CONFLICT-C-03",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-C08-STD-2",
+      "case": "C08",
+      "variant": "standard",
+      "repeatIndex": 2,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "C08-C-00",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-C-03",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-E-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "C08-G-03",
+          "result": "FAIL"
+        },
+        {
+          "itemId": "C08-G-MAJOR",
+          "result": "FAIL"
+        }
+      ]
+    },
+    {
+      "runId": "R-URLIDMISS-STD-1",
+      "case": "URL-IDMISS",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "URL-IDMISS-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "URL-IDMISS-G-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "URL-IDMISS-G-MAJOR",
+          "result": "PASS"
+        },
+        {
+          "itemId": "URL-IDMISS-C-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "URL-IDMISS-G-02",
+          "result": "PASS"
+        },
+        {
+          "itemId": "URL-IDMISS-G-03",
+          "result": "PASS"
+        }
+      ]
+    },
+    {
+      "runId": "R-URLTOKFRAG-STD-1",
+      "case": "URL-TOKFRAG",
+      "variant": "standard",
+      "repeatIndex": 1,
+      "runMode": "evaluation",
+      "runPurpose": "generation",
+      "inputVersion": "DEMO-1.0",
+      "inputFingerprint": null,
+      "sourceFingerprint": null,
+      "judgments": [
+        {
+          "itemId": "URL-TOKFRAG-C-01",
+          "result": "PASS"
+        },
+        {
+          "itemId": "URL-TOKFRAG-G-01",
+          "result": "FAIL"
+        },
+        {
+          "itemId": "URL-TOKFRAG-G-MAJOR",
+          "result": "FAIL"
+        },
+        {
+          "itemId": "URL-TOKFRAG-C-02",
+          "result": "PASS"
+        }
+      ]
+    }
+  ]
+}
